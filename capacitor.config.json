@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Ionic Music",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.ionicmusic.myapp",
+  "appName": "IonicMusic",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

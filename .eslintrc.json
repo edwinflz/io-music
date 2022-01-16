@@ -35,6 +35,9 @@
             "prefix": "app",
             "style": "camelCase"
           }
+        ],
+        "curly": [
+          "error", "multi"
         ]
       }
     },

@@ -1,0 +1,56 @@
+<ion-content>
+  <figure text-center padding>
+    <img src="assets/img/logo.png" />
+  </figure>
+  <form [formGroup]="registerForm" (ngSubmit)="loginUser(registerForm.value)">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="isInValid(nameField)">
+      <ng-container *ngFor="let validation of validationMessages.name">
+        <div *ngIf="hasError(validation.type, nameField)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label>Apellido</ion-label>
+      <ion-input formControlName="lastName"></ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="isInValid(lastNameField)">
+      <ng-container *ngFor="let validation of validationMessages.lastName">
+        <div *ngIf="hasError(validation.type, lastNameField)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="isInValid(emailField)">
+      <ng-container *ngFor="let validation of validationMessages.email">
+        <div *ngIf="hasError(validation.type, emailField)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="isInValid(passwordField)">
+      <ng-container *ngFor="let validation of validationMessages.password">
+        <div *ngIf="hasError(validation.type, passwordField)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button expand="full" shape="round"
+    color="success" [disabled]="!registerForm.valid" type="submit">
+      Registrar !
+    </ion-button>
+  </form>
+</ion-content>
